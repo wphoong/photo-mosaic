@@ -1,10 +1,9 @@
 import React from "react";
 import 'react-dates/initialize';
-import AddPhotoPage from "./AddPhotoPage.js";
 
 const DashboardPage = () => (
   <div>
-    Dashboard Page Content
+    <h1>This my dashboard</h1>
   </div>
 );
 

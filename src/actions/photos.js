@@ -11,13 +11,16 @@ export const startAddPhoto = (photoData = {}) => {
   return (dispatch, getState) => {
     const uid = getState().auth.uid;
     const {
-      photo = "",
+      photoLink = "",
       title = "",
       description = "",
       createdAt = 0
     } = photoData;
-    const photo = { photo, title, description, createdAt };
+    const photo = { photoLink, title, description, createdAt };
     
-    return dispatch(addPhoto({ ...expense }));
+    return dispatch(addPhoto({
+      id: ref.key,
+      ...photo 
+    }));
   };
 };
