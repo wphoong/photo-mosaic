@@ -52,6 +52,7 @@ export class PhotoListFilters extends React.Component {
           onFocusChange={this.onFocusChange}
           numberOfMonths={1}
           isOutsideRange={() => false}
+          showClearDates={true}
         />
       </div>
     );
