@@ -7,7 +7,12 @@ import { login, logout } from "./actions/auth.js";
 import LoadingPage from "./components/LoadingPage.js";
 import moment from "moment";
 import { addPhoto, removePhoto, editPhoto } from "./actions/photos.js";
-import { setTextFilter, sortByDateAscend, sortByDateDescend } from "./actions/filters.js";
+import { 
+  setTextFilter, 
+  sortByDateAscend, 
+  sortByDateDescend,
+  setStartDate,
+  setEndDate } from "./actions/filters.js";
 import "normalize.css/normalize.css";
 import "./styles/styles.scss";
 import 'react-dates/lib/css/_datepicker.css';
@@ -58,8 +63,11 @@ const photo3 = store.dispatch(addPhoto(photoDemo3));
 // store.dispatch(editPhoto(photo2.photo.id, {description: "EZ PZ"}));
 
 // store.dispatch(setTextFilter("HELLO FOOL"));
-store.dispatch(sortByDateAscend());
-store.dispatch(sortByDateDescend());
+// store.dispatch(sortByDateAscend());
+// store.dispatch(sortByDateDescend());
+
+store.dispatch(setStartDate(-100));
+store.dispatch(setEndDate(100));
 
 
 

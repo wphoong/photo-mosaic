@@ -1,8 +1,8 @@
 const filtersDefaultState = {
   text: "",
   sortBy: "descend",
-  setStartDate: 0,
-  setEndDate: 0
+  startDate: 0,
+  endDate: 0
 };
 
 const filtersReducer = (state=filtersDefaultState, action) => {
@@ -21,6 +21,16 @@ const filtersReducer = (state=filtersDefaultState, action) => {
       return {
         ...state,
         sortBy: "descend"
+      };
+    case "SET_START_DATE":
+      return {
+        ...state,
+        startDate: action.startDate
+      };
+    case "SET_END_DATE":
+      return {
+        ...state,
+        endDate: action.endDate
       };
     default:
       return state;
