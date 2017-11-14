@@ -5,7 +5,7 @@ import DashboardPage from "../components/DashboardPage.js";
 import AddPhotoPage from "../components/AddPhotoPage.js";
 import HelpPage from "../components/HelpPage.js";
 import NotFoundPage from "../components/NotFoundPage.js";
-import createHistory from 'history/createBrowserHistory';
+import createHistory from "history/createBrowserHistory";
 import PrivateRoute from "./PrivateRoute.js";
 import PublicRoute from "./PublicRoute.js";
 export const history = createHistory();
