@@ -7,6 +7,17 @@ const photosReducer = (state = photosReducerDefaultState, action) => {
         ...state,
         action.photo
       ];
+    case "EDIT_PHOTO":
+      return state.map((photo) => {
+        if (photo.id === action.id) {
+          return {
+            ...photo,
+            ...action.updates
+          };
+        }
+      });
+    case "REMOVE_PHOTO":
+      return state.filter(({id}) => id !== action.id);
     default:
       return state;
   }

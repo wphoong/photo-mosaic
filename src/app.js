@@ -5,16 +5,63 @@ import { Provider } from "react-redux";
 import configureStore from "./store/configureStore.js";
 import { login, logout } from "./actions/auth.js";
 import LoadingPage from "./components/LoadingPage.js";
+import moment from "moment";
+import { addPhoto, removePhoto, editPhoto } from "./actions/photos.js";
+import { setTextFilter, sortByDateAscend, sortByDateDescend } from "./actions/filters.js";
 import "normalize.css/normalize.css";
 import "./styles/styles.scss";
 import 'react-dates/lib/css/_datepicker.css';
 import { firebase } from "./firebase/firebase.js";
-// import { setTextFilter, sortByAmount, sortByDate, setStartDate, setEndDate } from "./actions/filters.js";
+
 
 console.log("App.js is running");
 
 // redux store
 const store = configureStore();
+
+const photoDemo1 = {
+  id: 1,
+  photoLink: "KRAPPA",
+  title: "LUL",
+  createdAt: moment(0).format("MMM Do, YYYY"),
+  description: ""
+};
+
+const photoDemo2 = {
+  id: 2,
+  photoLink: "LMAO",
+  title: "HEHEHE",
+  createdAt: moment(1000).format("MMM Do, YYYY"),
+  description: ""
+};
+
+const photoDemo3 = {
+  id: 3,
+  photoLink: "BOBA",
+  title: "WTF SAUCE",
+  createdAt: moment(-1000).format("MMM Do, YYYY"),
+  description: ""
+};
+
+const unsubscribe = store.subscribe(() => {
+  console.log(store.getState());
+});
+
+store.dispatch(addPhoto(photoDemo1));
+const photo2 = store.dispatch(addPhoto(photoDemo2));
+const photo3 = store.dispatch(addPhoto(photoDemo3));
+
+// store.dispatch(removePhoto(photo3.photo));
+
+// console.log(photo2.photo.id);
+
+// store.dispatch(editPhoto(photo2.photo.id, {description: "EZ PZ"}));
+
+// store.dispatch(setTextFilter("HELLO FOOL"));
+store.dispatch(sortByDateAscend());
+store.dispatch(sortByDateDescend());
+
+
 
 const jsx = (
   <Provider store={store} >
