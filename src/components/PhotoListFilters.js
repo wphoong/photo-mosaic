@@ -13,8 +13,8 @@ export class PhotoListFilters extends React.Component {
     this.props.setEndDate(endDate);
   };
   onFocusChange = (calenderFocused) => {
-    this.setState({ calenderFocused });
-  }
+    this.setState(() => ({ calenderFocused }));
+  };
   onTextChange = (e) => {
     this.props.setTextFilter(e.target.value);
   };

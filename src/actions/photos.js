@@ -6,7 +6,7 @@ export const addPhoto = (
   {
     photoLink = "",
     title = "",
-    createdAt = "",
+    createdAt = 0,
     description = ""
   } = {}) => ({
     type: "ADD_PHOTO",

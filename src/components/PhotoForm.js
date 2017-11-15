@@ -2,11 +2,12 @@ import React from "react";
 import moment from "moment";
 import 'react-dates/initialize';
 import { SingleDatePicker } from 'react-dates';
+import "react-dates/lib/css/_datepicker.css";
 
 const now = moment();
 console.log(now.format("MMM Do, YYYY"));
 
-export default class PhotoForm extends React.Component {
+class PhotoForm extends React.Component {
   constructor(props) {
     super(props);
 
@@ -42,7 +43,7 @@ export default class PhotoForm extends React.Component {
   onSubmit = (e) => {
     e.preventDefault();
 
-    if (!this.state.photoLink || !this.state.title || !this.state.description) {
+    if (!this.state.photoLink || !this.state.title) {
       this.setState(() => ({ error: "Please provide photo information"}));
     } else {
       this.setState(() => ({ error: "" }));
@@ -94,3 +95,5 @@ export default class PhotoForm extends React.Component {
     )
   };
 }
+
+export default PhotoForm;

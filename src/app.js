@@ -26,7 +26,6 @@ console.log("App.js is running");
 const store = configureStore();
 
 const photoDemo1 = {
-  id: 1,
   photoLink: "KRAPPA",
   title: "LUL",
   createdAt: 0,
@@ -35,7 +34,6 @@ const photoDemo1 = {
 // moment(0).format("MMM Do, YYYY")
 
 const photoDemo2 = {
-  id: 2,
   photoLink: "LMAO",
   title: "HEHEHE",
   createdAt: 1000,
@@ -43,7 +41,6 @@ const photoDemo2 = {
 };
 
 const photoDemo3 = {
-  id: 3,
   photoLink: "BOBA",
   title: "WTF SAUCE",
   createdAt: -1000,
@@ -51,7 +48,7 @@ const photoDemo3 = {
 };
 
 store.dispatch(addPhoto(photoDemo1));
-store.dispatch(addPhoto(photoDemo2));
+const photo2 = store.dispatch(addPhoto(photoDemo2));
 store.dispatch(addPhoto(photoDemo3));
 
 // store.dispatch(removePhoto(photo3.photo));
@@ -68,7 +65,6 @@ store.dispatch(addPhoto(photoDemo3));
 // store.dispatch(setEndDate(100));
 
 const state = store.getState();
-console.log(state.filters);
 const visiblePhotos = getVisiblePhotos(state.photos, state.filters);
 console.log(visiblePhotos);
 

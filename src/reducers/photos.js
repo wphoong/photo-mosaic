@@ -14,6 +14,8 @@ const photosReducer = (state = photosReducerDefaultState, action) => {
             ...photo,
             ...action.updates
           };
+        } else {
+          return photo;
         }
       });
     case "REMOVE_PHOTO":
