@@ -11,7 +11,7 @@ const getVisiblePhotos = (photos, { text, sortBy, startDate, endDate}) => {
   }).sort((a, b) => {
       if (sortBy === "descend") {
         return b.createdAt - a.createdAt;
-      } else if (soryBy === "ascend") {
+      } else if (sortBy === "ascend") {
         return a.createdAt - b.createdAt;
       }
     }

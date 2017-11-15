@@ -26,7 +26,7 @@ console.log("App.js is running");
 const store = configureStore();
 
 const photoDemo1 = {
-  photoLink: "KRAPPA",
+  photoLink: "https://upload.wikimedia.org/wikipedia/en/2/22/Kirby_Wii.png",
   title: "LUL",
   createdAt: 0,
   description: ""
@@ -34,16 +34,16 @@ const photoDemo1 = {
 // moment(0).format("MMM Do, YYYY")
 
 const photoDemo2 = {
-  photoLink: "LMAO",
+  photoLink: "https://vignette.wikia.nocookie.net/blogclan-2/images/4/45/Random-turtle.gif/revision/latest?cb=20160706220110",
   title: "HEHEHE",
-  createdAt: 1000,
+  createdAt: 100000000,
   description: ""
 };
 
 const photoDemo3 = {
-  photoLink: "BOBA",
+  photoLink: "https://vignette.wikia.nocookie.net/pusheenthecat/images/e/e4/Pokepusheen.gif/revision/latest?cb=20130703160248",
   title: "WTF SAUCE",
-  createdAt: -1000,
+  createdAt: -100000000,
   description: ""
 };
 
@@ -98,24 +98,3 @@ firebase.auth().onAuthStateChanged((user) => {
     history.push("/");
   }
 });
-
-// Example dispatching
-
-// store.dispatch(addExpense({description: "Water bill", amount: 4500}));
-// store.dispatch(addExpense({description: "Gas bill", createdAt: 1241341}));
-// store.dispatch(addExpense({description: "Boba bill", amount: 100, createdAt: 1000}));
-
-// store.dispatch(setTextFilter("water"));
-
-// setTimeout(()=> {
-//   store.dispatch(setTextFilter("bill"));
-// }, 3000);
-
-
-// store subscription
-
-// store.subscribe(() => {
-//   const state = store.getState();
-//   const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
-//   console.log(visibleExpenses);
-// });

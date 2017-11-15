@@ -7,8 +7,8 @@ console.log("connected to login page");
 export const LoginPage = ({startLogin}) => (
   <div className="box-layout" >
     <div className="box-layout__box">
-      <h1 className="box-layout__title">Boilerplate</h1>
-      <p>Tagline for appl</p>
+      <h1 className="box-layout__title">Photo Mosaic</h1>
+      <p>Enjoy your photos anytime!</p>
       <button className="button" onClick={startLogin}>Login with Google</button>
     </div>
   </div>
