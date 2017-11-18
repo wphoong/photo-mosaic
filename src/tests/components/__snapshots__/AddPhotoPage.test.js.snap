@@ -2,8 +2,15 @@
 
 exports[`it should render the add photo page 1`] = `
 <div>
-  <h1>
-    Add expense component!
-  </h1>
+  <div>
+    <h1>
+      Add Photos
+    </h1>
+  </div>
+  <div>
+    <PhotoForm
+      onSubmit={[Function]}
+    />
+  </div>
 </div>
 `;

@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render edit photo page 1`] = `
+<div>
+  <PhotoForm
+    onSubmit={[Function]}
+    photo={
+      Object {
+        "createdAt": 0,
+        "description": "descript1",
+        "id": 1,
+        "photoLink": "ez",
+        "title": "test1",
+      }
+    }
+  />
+  <button
+    onClick={[Function]}
+  >
+    Remove
+  </button>
+</div>
+`;

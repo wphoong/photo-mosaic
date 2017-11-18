@@ -2,12 +2,21 @@
 
 exports[`it should render Photo Form 1`] = `
 <div>
-  <form>
+  <form
+    onSubmit={[Function]}
+  >
     <input
+      autoFocus={true}
+      onChange={[Function]}
       placeholder="Enter Photo Link"
+      type="text"
+      value=""
     />
     <input
+      onChange={[Function]}
       placeholder="Title"
+      type="text"
+      value=""
     />
     <withStyles(SingleDatePicker)
       anchorDirection="left"
@@ -86,7 +95,10 @@ exports[`it should render Photo Form 1`] = `
       withPortal={false}
     />
     <textarea
+      onChange={[Function]}
       placeholder="Description"
+      type="text"
+      value=""
     />
     <div>
       <button>

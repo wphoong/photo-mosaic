@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import PhotoForm from "./PhotoForm.js";
 import { addPhoto } from "../actions/photos.js";
 
-class AddPhotoPage extends React.Component {
+export class AddPhotoPage extends React.Component {
   onSubmit = (photo) => {
     this.props.addPhoto(photo);
     this.props.history.push("/");

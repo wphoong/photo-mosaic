@@ -41,8 +41,8 @@ export class PhotoListFilters extends React.Component {
           value={this.props.filters.sortB}
           onChange={this.onSortChange}
         >
-          <option>Sort By Date Descending</option>
-          <option>Sort By Date Ascending</option>
+          <option>Date Descending</option>
+          <option>Date Ascending</option>
         </select>
         <DateRangePicker 
           startDate={this.props.filters.startDate}
