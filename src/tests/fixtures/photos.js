@@ -21,4 +21,11 @@ const photos = [{
 }
 ];
 
-export default photos;
+const photos2 = [{
+  photoLink: "ez3",
+  title: "test3",
+  description: "descript3",
+  createdAt: 1000
+}];
+
+export { photos as default, photos2 };

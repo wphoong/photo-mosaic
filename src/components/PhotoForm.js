@@ -3,10 +3,6 @@ import moment from "moment";
 import 'react-dates/initialize';
 import { SingleDatePicker } from 'react-dates';
 
-
-const now = moment();
-console.log(now.format("MMM Do, YYYY"));
-
 class PhotoForm extends React.Component {
   constructor(props) {
     super(props);

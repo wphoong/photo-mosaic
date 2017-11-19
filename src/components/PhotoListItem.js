@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import moment from "moment";
 import { Link } from "react-router-dom";
 
-const PhotoListItem = ({ id, photoLink, title, createdAt, description }) => (
+export const PhotoListItem = ({ id, photoLink, title, createdAt, description }) => (
   <div>
     <img src={photoLink} height="300" width="300"/>
     <Link to={`/edit/${id}`}>

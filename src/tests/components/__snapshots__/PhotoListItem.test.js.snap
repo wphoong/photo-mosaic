@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render photolist item correctly 1`] = `
+<div>
+  <img
+    height="300"
+    src="ez"
+    width="300"
+  />
+  <Link
+    replace={false}
+    to="/edit/1"
+  >
+    <h3>
+      test1
+    </h3>
+  </Link>
+  <p>
+    descript1
+  </p>
+  <p>
+    Created at: 
+    Dec 31st, 1969
+  </p>
+</div>
+`;

@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render 0 photos with no provided photos 1`] = `
+<div>
+  <div>
+    <span>
+      Showing 0 Photos
+    </span>
+  </div>
+</div>
+`;
+
+exports[`should render photo list with provided photos 1`] = `
+<div>
+  <Connect(PhotoListItem)
+    createdAt={0}
+    description="descript1"
+    id={1}
+    key="1"
+    photoLink="ez"
+    title="test1"
+  />
+  <Connect(PhotoListItem)
+    createdAt={-100}
+    description="descript2"
+    id={2}
+    key="2"
+    photoLink="ez2"
+    title="test2"
+  />
+  <Connect(PhotoListItem)
+    createdAt={1000}
+    description="descript3"
+    id={3}
+    key="3"
+    photoLink="ez3"
+    title="test3"
+  />
+</div>
+`;
