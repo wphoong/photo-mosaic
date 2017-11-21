@@ -21,9 +21,9 @@ export class PhotoListFilters extends React.Component {
   onSortChange = (e) => {
     const sort = e.target.value;
 
-    if (sort === "Sort By Date Ascending") {
+    if (sort === "ascend") {
       this.props.sortByDateAscend();
-    } else if (sort === "Sort By Date Descending") {
+    } else if (sort === "descend") {
       this.props.sortByDateDescend();
     }
   };
@@ -38,11 +38,11 @@ export class PhotoListFilters extends React.Component {
           onChange={this.onTextChange}
         />
         <select
-          value={this.props.filters.sortB}
+          value={this.props.filters.sortBy}
           onChange={this.onSortChange}
         >
-          <option>Date Descending</option>
-          <option>Date Ascending</option>
+          <option value="descend">Date Descending</option>
+          <option value="ascend">Date Ascending</option>
         </select>
         <DateRangePicker 
           startDate={this.props.filters.startDate}
