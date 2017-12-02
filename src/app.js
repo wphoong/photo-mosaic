@@ -6,7 +6,7 @@ import configureStore from "./store/configureStore.js";
 import { login, logout } from "./actions/auth.js";
 import LoadingPage from "./components/LoadingPage.js";
 import moment from "moment";
-import { addPhoto, removePhoto, editPhoto } from "./actions/photos.js";
+import { startAddPhoto, addPhoto, removePhoto, editPhoto } from "./actions/photos.js";
 import { 
   setTextFilter, 
   sortByDateAscend, 
@@ -47,9 +47,9 @@ const photoDemo3 = {
   description: ""
 };
 
-store.dispatch(addPhoto(photoDemo1));
-const photo2 = store.dispatch(addPhoto(photoDemo2));
-store.dispatch(addPhoto(photoDemo3));
+store.dispatch(startAddPhoto(photoDemo1));
+const photo2 = store.dispatch(startAddPhoto(photoDemo2));
+store.dispatch(startAddPhoto(photoDemo3));
 
 // store.dispatch(removePhoto(photo3.photo));
 
