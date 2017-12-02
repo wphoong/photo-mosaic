@@ -34,6 +34,18 @@ test("should edit photo", () => {
   expect(state[0].createdAt).toBe(99);
 });
 
+test("should not edit photo if id not found", () => {
+  const id = 99;
+  const updates = { createdAt: 99 };
+  const action = {
+    type: "EDIT_PHOTO",
+    id,
+    updates
+  };
+  const state = photosReducer(photos, action);
+  expect(state).toEqual(photos);
+});
+
 test("should remove photo by id", () => {
   const id = photos[0].id;
   const action = {
@@ -54,4 +66,13 @@ test("should not remove photo by id if id not found", () => {
   expect(state).toEqual(photos);
 });
 
+test("should set photos", () => {
+  const photoTest = photos[0];
+  const action = {
+    type: "SET_PHOTOS",
+    photos: photoTest
+  };
+  const state = photosReducer(photos, action);
+  expect(state).toEqual(photoTest);
+});
 
