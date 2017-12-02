@@ -1,11 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
 import PhotoForm from "./PhotoForm.js";
-import { addPhoto } from "../actions/photos.js";
+import { startAddPhoto } from "../actions/photos.js";
 
 export class AddPhotoPage extends React.Component {
   onSubmit = (photo) => {
-    this.props.addPhoto(photo);
+    this.props.startAddPhoto(photo);
     this.props.history.push("/");
   }
   render() {
@@ -23,7 +23,7 @@ export class AddPhotoPage extends React.Component {
 }
 
 const mapStateToDispatch = (dispatch) => ({
-  addPhoto: (photo) => dispatch(addPhoto(photo))
+  startAddPhoto: (photo) => dispatch(startAddPhoto(photo))
 });
 
 export default connect(undefined, mapStateToDispatch)(AddPhotoPage);

@@ -3,12 +3,12 @@ import { shallow } from "enzyme";
 import { AddPhotoPage } from "../../components/AddPhotoPage.js";
 import photos from "../fixtures/photos.js";
 
-let wrapper, addPhoto, history;
+let wrapper, startAddPhoto, history;
 
 beforeEach(() => {
-  addPhoto = jest.fn();
+  startAddPhoto = jest.fn();
   history = { push: jest.fn() };
-  wrapper = shallow(<AddPhotoPage addPhoto={addPhoto} history={history} />);
+  wrapper = shallow(<AddPhotoPage startAddPhoto={startAddPhoto} history={history} />);
 });
 
 test("it should render the add photo page", () => {
@@ -17,6 +17,6 @@ test("it should render the add photo page", () => {
 
 test("should handle on submit", () => {
   wrapper.find("PhotoForm").prop("onSubmit")(photos[0]);
-  expect(addPhoto).toHaveBeenLastCalledWith(photos[0]);
+  expect(startAddPhoto).toHaveBeenLastCalledWith(photos[0]);
   expect(history.push).toHaveBeenLastCalledWith("/");
 });

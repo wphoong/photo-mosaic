@@ -8,7 +8,7 @@ exports[`should render edit photo page 1`] = `
       Object {
         "createdAt": 0,
         "description": "descript1",
-        "id": 1,
+        "id": "1",
         "photoLink": "ez",
         "title": "test1",
       }

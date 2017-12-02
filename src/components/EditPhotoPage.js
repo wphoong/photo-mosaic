@@ -1,15 +1,15 @@
 import React from "react";
 import { connect } from "react-redux";
 import PhotoForm from "./PhotoForm.js";
-import { editPhoto, removePhoto } from "../actions/photos.js";
+import { startEditPhoto, startRemovePhoto } from "../actions/photos.js";
 
 export class EditPhotoPage extends React.Component {
   onSubmit = (photo) => {
-    this.props.editPhoto(this.props.photo.id, photo);
+    this.props.startEditPhoto(this.props.photo.id, photo);
     this.props.history.push("/");
   };
   onRemove = () => {
-    this.props.removePhoto({id: this.props.photo.id});
+    this.props.startRemovePhoto({id: this.props.photo.id});
     this.props.history.push("/");
   };
   render () {
@@ -36,8 +36,8 @@ const mapStateToProps = (state, props) => ({
 });
 
 const mapStateToDispatch = (dispatch, props) => ({
-  editPhoto: (id, photo) => dispatch(editPhoto(id, photo)),
-  removePhoto: (data) => dispatch(removePhoto(data))
+  startEditPhoto: (id, photo) => dispatch(startEditPhoto(id, photo)),
+  startRemovePhoto: (data) => dispatch(startRemovePhoto(data))
 });
 
 export default connect(mapStateToProps, mapStateToDispatch)(EditPhotoPage);
