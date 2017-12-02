@@ -6,7 +6,7 @@ import configureStore from "./store/configureStore.js";
 import { login, logout } from "./actions/auth.js";
 import LoadingPage from "./components/LoadingPage.js";
 import moment from "moment";
-import { startAddPhoto, addPhoto, removePhoto, editPhoto } from "./actions/photos.js";
+import { startAddPhoto, startSetPhotos } from "./actions/photos.js";
 import { 
   setTextFilter, 
   sortByDateAscend, 
@@ -47,22 +47,9 @@ const photoDemo3 = {
   description: ""
 };
 
-store.dispatch(startAddPhoto(photoDemo1));
-const photo2 = store.dispatch(startAddPhoto(photoDemo2));
-store.dispatch(startAddPhoto(photoDemo3));
-
-// store.dispatch(removePhoto(photo3.photo));
-
-// console.log(photo2.photo.id);
-
-// store.dispatch(editPhoto(photo2.photo.id, {description: "EZ PZ"}));
-
-// store.dispatch(setTextFilter("HELLO FOOL"));
-// store.dispatch(sortByDateAscend());
-// store.dispatch(sortByDateDescend());
-
-// store.dispatch(setStartDate(-100));
-// store.dispatch(setEndDate(100));
+// store.dispatch(startAddPhoto(photoDemo1));
+// const photo2 = store.dispatch(startAddPhoto(photoDemo2));
+// store.dispatch(startAddPhoto(photoDemo3));
 
 const state = store.getState();
 const visiblePhotos = getVisiblePhotos(state.photos, state.filters);
@@ -88,10 +75,12 @@ ReactDOM.render(<LoadingPage />, document.getElementById('app'));
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
     store.dispatch(login(user.uid));
-    renderApp();
-    if (history.location.pathname === "/") {
-      history.push("/dashboard");
-    }
+    store.dispatch(startSetPhotos()).then(() => {
+      renderApp();
+      if (history.location.pathname === "/") {
+        history.push("/dashboard");
+      }
+    });
   } else {
     store.dispatch(logout());
     renderApp();

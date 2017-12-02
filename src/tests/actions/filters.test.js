@@ -40,7 +40,7 @@ test("should sort by date descending", () => {
 });
 
 test("should set start date", () => {
-  const startDate = 0;
+  const startDate = moment(0);
   const action = setStartDate(startDate);
   expect(action).toEqual({
     type: "SET_START_DATE",
@@ -49,7 +49,7 @@ test("should set start date", () => {
 });
 
 test("should set end date", () => {
-  const endDate = 0;
+  const endDate = moment(1);
   const action = setEndDate(endDate);
   expect(action).toEqual({
     type: "SET_END_DATE",

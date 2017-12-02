@@ -20,6 +20,8 @@ const photosReducer = (state = photosReducerDefaultState, action) => {
       });
     case "REMOVE_PHOTO":
       return state.filter(({id}) => id !== action.id);
+    case "SET_PHOTOS":
+      return action.photos;
     default:
       return state;
   }
