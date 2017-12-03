@@ -21,7 +21,7 @@ exports[`should render photo list with provided photos 1`] = `
     title="test1"
   />
   <Connect(PhotoListItem)
-    createdAt={-100}
+    createdAt={-345600000}
     description="descript2"
     id="2"
     key="2"
@@ -29,7 +29,7 @@ exports[`should render photo list with provided photos 1`] = `
     title="test2"
   />
   <Connect(PhotoListItem)
-    createdAt={1000}
+    createdAt={345600000}
     description="descript3"
     id="3"
     key="3"

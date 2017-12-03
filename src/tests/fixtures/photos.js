@@ -1,3 +1,5 @@
+import moment from "moment";
+
 const photos = [{
   id: "1",
   photoLink: "ez",
@@ -10,14 +12,14 @@ const photos = [{
   photoLink: "ez2",
   title: "test2",
   description: "descript2",
-  createdAt: -100
+  createdAt: moment(0).subtract(4, "days").valueOf()
 },
 {
   id: "3",
   photoLink: "ez3",
   title: "test3",
   description: "descript3",
-  createdAt: 1000
+  createdAt: moment(0).add(4, "days").valueOf()
 }
 ];
 
