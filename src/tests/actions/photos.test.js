@@ -14,6 +14,8 @@ import {
 import photos from "../fixtures/photos.js";
 import database from "../../firebase/firebase.js";
 
+const uid = "testuid";
+const defaultAuthState = { auth: { uid } };
 const createMockStore = configureMockStore([thunk]);
 
 beforeEach((done) => {
@@ -21,7 +23,7 @@ beforeEach((done) => {
   photos.forEach(({ id, photoLink, title, createdAt, description }) => {
     photosData[id] = { photoLink, title, createdAt, description };
   });
-  database.ref(`photos`).set(photosData).then(() => done());
+  database.ref(`users/${uid}/photos`).set(photosData).then(() => done());
 });
 
 test("should setup add photo action object", () => {
@@ -34,7 +36,7 @@ test("should setup add photo action object", () => {
 });
 
 test("should setup add photo with provided values to database and store", (done) => {
-  const store = createMockStore({});
+  const store = createMockStore(defaultAuthState);
   const photo = {
     photoLink: "hehe",
     title: "test",
@@ -51,7 +53,7 @@ test("should setup add photo with provided values to database and store", (done)
         ...photo
       }
     });
-    return database.ref(`photos/${actions[0].photo.id}`).once("value");
+    return database.ref(`users/${uid}/photos/${actions[0].photo.id}`).once("value");
   }).then((snapshot) => {
     expect(snapshot.val()).toEqual(photo);
     done();
@@ -59,7 +61,7 @@ test("should setup add photo with provided values to database and store", (done)
 });
 
 test("should setup add photo with default values to database and store", (done) => {
-  const store = createMockStore({});
+  const store = createMockStore(defaultAuthState);
   const photoDefault = {
     photoLink: "",
     title: "",
@@ -76,7 +78,7 @@ test("should setup add photo with default values to database and store", (done) 
         ...photoDefault
       }
     });
-    return database.ref(`photos/${actions[0].photo.id}`).once("value");
+    return database.ref(`users/${uid}/photos/${actions[0].photo.id}`).once("value");
   }).then((snapshot) => {
     expect(snapshot.val()).toEqual(photoDefault);
     done();
@@ -95,7 +97,7 @@ test("should setup edit expense action object", () => {
 });
 
 test("should edit photo in database", (done) => {
-  const store = createMockStore({});
+  const store = createMockStore(defaultAuthState);
   const id = photos[0].id;
   const updates = { title: "monkas" };
 
@@ -107,7 +109,7 @@ test("should edit photo in database", (done) => {
       updates
     });
 
-    return database.ref(`photos/${id}`).once("value");
+    return database.ref(`users/${uid}/photos/${id}`).once("value");
   }).then((snapshot) => {
     expect(snapshot.val().title).toBe(updates.title);
     done();
@@ -124,7 +126,7 @@ test("should setup remove photo action object", () => {
 });
 
 test("should remove photo from database and store", (done) => {
-  const store = createMockStore({});
+  const store = createMockStore(defaultAuthState);
   const id = photos[0].id;
   store.dispatch(startRemovePhoto({id})).then(() => {
     const actions = store.getActions();
@@ -132,7 +134,7 @@ test("should remove photo from database and store", (done) => {
       type: "REMOVE_PHOTO",
       id
     });
-    return database.ref(`photos/${id}`).once("value", (snapshot) => {
+    return database.ref(`users/${uid}/photos/${id}`).once("value", (snapshot) => {
       expect(snapshot.val()).toBeFalsy();
       done();
     });
@@ -148,7 +150,7 @@ test("should setup set photos action object", () => {
 });
 
 test("should call startSetPhotos to fetch expenses from firebase", (done) => {
-  const store = createMockStore({});
+  const store = createMockStore(defaultAuthState);
 
   store.dispatch(startSetPhotos()).then(() => {
     const actions = store.getActions();
