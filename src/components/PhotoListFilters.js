@@ -30,7 +30,6 @@ export class PhotoListFilters extends React.Component {
   render() {
     return (
       <div>
-        <h1>LUL</h1>
         <input 
           type="text"
           placeholder="Search By title"
