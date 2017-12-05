@@ -15,6 +15,7 @@ exports[`should render Login page 1`] = `
     <p>
       Enjoy your photos anytime!
     </p>
+    <br />
     <button
       className="button"
     >

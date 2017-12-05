@@ -1,10 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render expense dashboard page correctly 1`] = `
-<div>
-  <h1>
+<div
+  className="content-container"
+>
+  <h1
+    className="header__secondary title is-2"
+  >
     's Photos
   </h1>
+  <h3
+    className="header__secondary"
+  >
+    Showing 
+    3
+     Photo(s)
+  </h3>
+  <Link
+    className="button is-primary is-outlined button--photo"
+    replace={false}
+    to="/create"
+  >
+    <h2>
+      Add Photo
+    </h2>
+  </Link>
   <Connect(PhotoListFilters) />
   <Connect(PhotoList) />
 </div>

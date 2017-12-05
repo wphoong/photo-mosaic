@@ -1,6 +1,5 @@
 .button {
   background-color: $dodger-blue;
-  border: none;
   color: white;
   display: inline-block;
   font-size: $font-size-large;
@@ -16,4 +15,8 @@
 
 .button--secondary {
   background: #888888;
+}
+
+.button--photo {
+  margin: 5px 0 5px 0;
 }

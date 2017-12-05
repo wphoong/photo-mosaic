@@ -19,15 +19,6 @@ exports[`should render Header correctly 1`] = `
           Photo Mosaic
         </h1>
       </Link>
-      <Link
-        className="header__title"
-        replace={false}
-        to="/create"
-      >
-        <h2>
-          Create
-        </h2>
-      </Link>
       <button
         className="button button--link"
         onClick={Object {}}

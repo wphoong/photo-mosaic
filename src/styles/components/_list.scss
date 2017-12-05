@@ -8,17 +8,12 @@
 }
 
 .list-body {
-  margin-bottom: $s-size;
   border: 1px solid darken($off-white, 7%);
   padding: $s-size;
   text-decoration: none;
   transition: background .3s ease;
   &:hover {
     background: $off-white;
-  }
-  
-  @media (min-width: $desktop-breakpoint) {
-    margin-bottom: $m-size;
   }
 }
 
@@ -44,21 +39,21 @@
 }
 
 .list-item--message {
-  align-items: center;
   color: $grey;
   justify-content: center;
-  padding: $m-size;
+  padding: $m-size 2.5px;
   &:hover {
     background: none;
   }
 }
 
 .list-item__title {
-  margin: 0;
+  margin: 0 0 $s-size 2.5px;
   word-break: break-all;
 }
 
 .list-item__subtitle {
+  margin: $s-size 0 0 2.5px;
   color: $grey;
   font-size: $font-size-small;
 }

@@ -10,6 +10,7 @@ beforeEach(() => {
 });
 
 test("should render photo list with provided photos", () => {
+  wrapper = shallow(<PhotoList photos={photos}/>);
   expect(wrapper).toMatchSnapshot();
 });
 

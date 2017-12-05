@@ -1,26 +1,41 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render photolist item correctly 1`] = `
-<div>
-  <img
-    height="300"
-    src="ez"
-    width="300"
-  />
-  <Link
-    replace={false}
-    to="/edit/1"
+<div
+  className="column is-one-third"
+>
+  <div
+    className="list-body"
   >
-    <h3>
-      test1
-    </h3>
-  </Link>
-  <p>
-    descript1
-  </p>
-  <p>
-    Created at: 
-    Dec 31st, 1969
-  </p>
+    <div>
+      <Link
+        replace={false}
+        to="/edit/1"
+      >
+        <h3
+          className="list-item__title"
+        >
+          test1
+        </h3>
+      </Link>
+    </div>
+    <img
+      className="image"
+      height="400"
+      src="ez"
+      width="400"
+    />
+    <h2
+      className="list-item__subtitle"
+    >
+      descript1
+    </h2>
+    <p
+      className="list-item--message subtitle is-5"
+    >
+      Created at: 
+      Dec 31st, 1969
+    </p>
+  </div>
 </div>
 `;

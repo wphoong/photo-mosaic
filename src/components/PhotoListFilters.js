@@ -43,7 +43,7 @@ export class PhotoListFilters extends React.Component {
           <select
             value={this.props.filters.sortBy}
             onChange={this.onSortChange}
-            className="select"
+            className="select__secondary"
           >
             <option value="descend">Date Descending</option>
             <option value="ascend">Date Ascending</option>
