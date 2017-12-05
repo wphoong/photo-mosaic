@@ -4,7 +4,7 @@ import moment from "moment";
 import { Link } from "react-router-dom";
 
 export const PhotoListItem = ({ id, photoLink, title, createdAt, description }) => (
-  <div>
+  <div >
     <img src={photoLink} height="300" width="300"/>
     <Link to={`/edit/${id}`}>
       <h3>{title}</h3>

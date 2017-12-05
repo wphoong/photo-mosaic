@@ -7,7 +7,9 @@
 }
 
 .select {
-  @extend .text-input;  
+  @extend .text-input;
+  background: $superman-blue;
+  color: $off-white;
 }
 
 .textarea {

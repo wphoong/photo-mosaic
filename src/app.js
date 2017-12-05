@@ -6,18 +6,12 @@ import configureStore from "./store/configureStore.js";
 import { login, logout } from "./actions/auth.js";
 import LoadingPage from "./components/LoadingPage.js";
 import moment from "moment";
-import { startAddPhoto, startSetPhotos } from "./actions/photos.js";
-import { 
-  setTextFilter, 
-  sortByDateAscend, 
-  sortByDateDescend,
-  setStartDate,
-  setEndDate } from "./actions/filters.js";
-import getVisiblePhotos from "./selectors/photos.js";
 import "normalize.css/normalize.css";
+import 'bulma/css/bulma.css';
 import "./styles/styles.scss";
-import 'react-dates/lib/css/_datepicker.css';
+import "react-dates/lib/css/_datepicker.css";
 import { firebase } from "./firebase/firebase.js";
+import { startSetPhotos } from "./actions/photos.js";
 
 console.log("App.js is running");
 

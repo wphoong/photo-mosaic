@@ -14,13 +14,15 @@ export class EditPhotoPage extends React.Component {
   };
   render () {
     return (
-      <div>
+      <div className="content-container">
+        <h1>Edit Photo</h1>
         <PhotoForm 
           photo={this.props.photo} 
           onSubmit={this.onSubmit}
         />
         <button
           onClick={this.onRemove}
+          className="button button--secondary"
         >
           Remove
         </button>

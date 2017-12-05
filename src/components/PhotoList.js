@@ -11,11 +11,18 @@ export const PhotoList = (props) => (
         <div>
           <span>Showing 0 Photos</span>
         </div>
-      ) : (
-          props.photos.map((photo) => {
-            return <PhotoListItem key={photo.id} {...photo} />;
-          })
-      )
+      ) : 
+        <div className="columns is-multiline is-desktop">
+          {
+            props.photos.map((photo) => {
+              return (
+                <div className="column is-one-third">
+                  <PhotoListItem key={photo.id} {...photo} />
+                </div>
+                );
+            })
+          }
+        </div>
     }
   </div>
 );

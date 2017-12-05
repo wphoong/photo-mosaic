@@ -29,30 +29,38 @@ export class PhotoListFilters extends React.Component {
   };
   render() {
     return (
-      <div>
-        <input 
-          type="text"
-          placeholder="Search By title"
-          value={this.props.filters.text}
-          onChange={this.onTextChange}
-        />
-        <select
-          value={this.props.filters.sortBy}
-          onChange={this.onSortChange}
-        >
-          <option value="descend">Date Descending</option>
-          <option value="ascend">Date Ascending</option>
-        </select>
-        <DateRangePicker 
-          startDate={this.props.filters.startDate}
-          endDate={this.props.filters.endDate}
-          onDatesChange={this.onDatesChange}
-          focusedInput={this.state.calenderFocused}
-          onFocusChange={this.onFocusChange}
-          numberOfMonths={1}
-          isOutsideRange={() => false}
-          showClearDates={true}
-        />
+      <div className="input-group">
+        <div className="input-group__item">
+          <input 
+            type="text"
+            placeholder="Search By title"
+            value={this.props.filters.text}
+            onChange={this.onTextChange}
+            className="text-input"
+          />
+        </div>
+        <div className="input-group__item">
+          <select
+            value={this.props.filters.sortBy}
+            onChange={this.onSortChange}
+            className="select"
+          >
+            <option value="descend">Date Descending</option>
+            <option value="ascend">Date Ascending</option>
+          </select>
+        </div>
+        <div className="input-group__item">
+          <DateRangePicker 
+            startDate={this.props.filters.startDate}
+            endDate={this.props.filters.endDate}
+            onDatesChange={this.onDatesChange}
+            focusedInput={this.state.calenderFocused}
+            onFocusChange={this.onFocusChange}
+            numberOfMonths={1}
+            isOutsideRange={() => false}
+            showClearDates={true}
+          />
+        </div>
       </div>
     );
   }

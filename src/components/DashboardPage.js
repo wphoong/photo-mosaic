@@ -16,7 +16,7 @@ firebase.auth().onAuthStateChanged((user) => {
 });
 
 const DashboardPage = () => (
-  <div>
+  <div className="content-container">
     <h1>{userName}'s Photos</h1>
     <PhotoListFilters />
     <PhotoList />

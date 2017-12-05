@@ -54,7 +54,10 @@ class PhotoForm extends React.Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.onSubmit} >
+        <form 
+          onSubmit={this.onSubmit}
+          className="form"
+          >
           {this.state.error && <p className="form__error">{this.state.error}</p>}
           <input 
             type="text"
@@ -62,12 +65,14 @@ class PhotoForm extends React.Component {
             placeholder="Enter Photo Link"
             value={this.state.photoLink}
             onChange={this.onPhotoChange}
+            className="text-input"
           />
           <input 
             type="text"
             placeholder="Title"
             value={this.state.title}
             onChange={this.onTitleChange}
+            className="text-input"
           />
           <SingleDatePicker 
             date={this.state.createdAt}
@@ -82,9 +87,10 @@ class PhotoForm extends React.Component {
             placeholder="Description"
             value={this.state.description}
             onChange={this.onDescriptionChange}
+            className="textarea"
           />
           <div>
-            <button>Save Photo</button>
+            <button className="button">Save Photo</button>
           </div>
         </form>
       </div>

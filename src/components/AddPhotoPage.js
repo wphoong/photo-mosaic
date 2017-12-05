@@ -10,9 +10,9 @@ export class AddPhotoPage extends React.Component {
   }
   render() {
     return (
-      <div>
+      <div className="content-container">
         <div>
-          <h1>Add Photos</h1>
+          <h1>Add Photo</h1>
         </div>
         <div>
           <PhotoForm onSubmit={this.onSubmit} />
