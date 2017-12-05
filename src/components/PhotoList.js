@@ -12,7 +12,7 @@ export const PhotoList = (props) => (
           <span>Showing 0 Photos</span>
         </div>
       ) : 
-        <div className="columns is-multiline is-desktop">
+        <div className="columns is-multiline is-tablet">
           {
             props.photos.map((photo) => {
               return (

@@ -8,10 +8,17 @@
 }
 
 .list-body {
-  margin-bottom: $m-size;
+  margin-bottom: $s-size;
+  border: 1px solid darken($off-white, 7%);
+  padding: $s-size;
+  text-decoration: none;
+  transition: background .3s ease;
+  &:hover {
+    background: $off-white;
+  }
   
   @media (min-width: $desktop-breakpoint) {
-    margin-bottom: $l-size;
+    margin-bottom: $m-size;
   }
 }
 
