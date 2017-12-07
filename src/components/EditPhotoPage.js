@@ -15,7 +15,7 @@ export class EditPhotoPage extends React.Component {
   render () {
     return (
       <div className="content-container">
-        <h1>Edit Photo</h1>
+        <h1 className="header__secondary title is-2">Edit Photo</h1>
         <PhotoForm 
           photo={this.props.photo} 
           onSubmit={this.onSubmit}

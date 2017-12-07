@@ -12,7 +12,7 @@ export class AddPhotoPage extends React.Component {
     return (
       <div className="content-container">
         <div>
-          <h1>Add Photo</h1>
+          <h1 className="header__secondary title is-2" >Add Photo</h1>
         </div>
         <div>
           <PhotoForm onSubmit={this.onSubmit} />
