@@ -7,10 +7,10 @@ export const Header = ({ startLogOut }) => (
   <header className="header" >
     <div className="content-container">
       <div className="header__content">
-        <Link className="header__title" to="/dashboard">
+        <Link className="title header__title is-3" to="/dashboard">
           <h1>Photo Mosaic</h1>
         </Link>
-        <button className="button button--link" onClick={startLogOut} >Log Out</button>
+        <button className="button is-primary" onClick={startLogOut} >Log Out</button>
       </div>
     </div>
   </header>

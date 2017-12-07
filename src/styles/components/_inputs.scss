@@ -6,10 +6,13 @@
   padding: $s-size;
 }
 
-.select__secondary {
-  @extend .text-input;
-  background: $superman-blue;
-  color: $off-white;
+.select select {
+  height: 50px;
+  margin-top: 0;
+}
+
+.select {
+  margin: 0 0 25px 0;
 }
 
 .textarea {

@@ -1,12 +1,14 @@
 .header {
-  background: $dark-blue;
+  background: $light-green;
 }
 
 .header__title {
   color: white;
+  font-weight: 400;
   text-decoration: none;
   h1 {
     margin: 0;
+    padding-top: $m-size;
   }
 }
 

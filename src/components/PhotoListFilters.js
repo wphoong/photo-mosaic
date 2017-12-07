@@ -30,6 +30,21 @@ export class PhotoListFilters extends React.Component {
   render() {
     return (
       <div className="input-group">
+      
+        <div className="input-group__item">
+          <div className="control">
+            <div className="select">
+              <select
+                value={this.props.filters.sortBy}
+                onChange={this.onSortChange}
+              >
+                <option value="descend">Date Descending</option>
+                <option value="ascend">Date Ascending</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
         <div className="input-group__item">
           <input 
             type="text"
@@ -39,16 +54,8 @@ export class PhotoListFilters extends React.Component {
             className="text-input"
           />
         </div>
-        <div className="input-group__item">
-          <select
-            value={this.props.filters.sortBy}
-            onChange={this.onSortChange}
-            className="select__secondary"
-          >
-            <option value="descend">Date Descending</option>
-            <option value="ascend">Date Ascending</option>
-          </select>
-        </div>
+ 
+        
         <div className="input-group__item">
           <DateRangePicker 
             startDate={this.props.filters.startDate}
